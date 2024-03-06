@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員頁面</title>
+</head>
+<body>
+    <h1>請輸入留言</h1>
+    <form action="/leave-message" method="POST"> 
+        你的稱呼: <%=name%><br/>
+        留言 <input type="text" name="message"><br/>
+        <button>送出留言</button>
+    </form> 
+    <h3>留言列表</h3>
+    <%for(let i=0; i<messages.length; i++){ %>
+        <div>稱呼: <%=messages[i].name%></div><br/>
+        <div>留言: <%=messages[i].message%></div><br/>
+        <div>時間: <%=messages[i].timestamp%></div><br/>
+        <hr>
+            <%}%>
+    <form action="/signout" method="POST"> 
+        <button>登出會員</button>
+    </form>   
+</body>
+</html>
